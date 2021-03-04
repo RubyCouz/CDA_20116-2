@@ -1,0 +1,28 @@
+#navImg {
+    margin-right: 1%;
+}
+
+/* Footer */
+
+.footer-container {
+    margin-top: auto;
+    background-color: #121212;
+    color: #FFFFFF;
+}
+
+a{
+    text-decoration: none;
+    color: #FFFFFF;
+}
+
+.logo_footer{
+    margin:0 50px;
+}
+
+.global-footer__list{
+    margin:0 50px;
+}
+
+card-body text-center{
+    margin-left:auto ;
+}

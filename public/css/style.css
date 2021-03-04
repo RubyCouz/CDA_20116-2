@@ -1,0 +1,106 @@
+body {
+    background-color: #222222;
+}
+
+h1 {
+    color: #C9C9C9;
+}
+
+.table {
+    color: #FFFFFF;
+}
+
+#navImg {
+    margin-right: 1%;
+}
+
+/* Connection */
+
+.body1 {
+    text-align: center;
+    background-color: #222222;
+}
+
+#logo{
+    height: 10em
+}
+
+.head1 p {
+    color: lightgray;
+    font-size: 2em;
+}
+
+.sign {
+    text-align: center;
+    width: 25em;
+    height: 25em;
+    background-color: #b0d6f1;
+    display: block;
+    box-shadow: 0 0 10px darkgrey;
+    margin:auto;
+}
+
+.form{
+    background-color: #FFFFFF;
+}
+
+#p2{
+    color: black;
+}
+
+
+/* sign up */
+.sign1 {
+    padding: 1em;
+}
+
+.back a {
+    color: lightgray;
+}
+
+.sign1a {
+    text-align: center;
+}
+
+.sign1a h1 {
+    color: lightgray;
+}
+
+.sign1b {
+    margin: 0 auto;
+    width: 40em;
+    height: 53em;
+    background-color: lightsteelblue;
+    box-shadow: 0 0 10px lightsteelblue;
+    border-radius: 5px;
+    padding: 1em 2em 5em;
+}
+
+
+/* pass forgotten*/
+
+.for1 {
+    text-align: center;
+    margin: 0 auto;
+}
+
+/* Footer */
+
+.footer-container {
+    margin-top: auto;
+    background-color: #121212;
+    color: #FFFFFF;
+}
+
+a{
+    text-decoration: none;
+    color: #FFFFFF;
+}
+
+.logo_footer{
+    margin:0 50px;
+}
+
+.global-footer__list{
+    margin:0 50px;
+}

@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('css/list_style.css') }}">
+{% endblock %}
+{% block title %} La liste ALL des guitar {% endblock %}
+
+{% block body %}
+    <div class="d-flex">
+        <div class="p-2 justify-content-start cat">
+            <div class="bg-secondary cat1">
+                <p class="title"><b>MODELE</b></p><br><br><br><br><br><br>
+            </div><br><br>
+            <div class="bg-secondary cat1">
+                <p class="title"><b>PRIX</b></p><br><br><br><br><br><br>
+            </div>
+        </div>
+        <div class="p-2 flex-grow-1 justify-content-center">
+            {% for guitar in guitars %}
+                <div class="list1">
+                    <div class="list1a">
+                        <img src="{{ asset('img/'~guitar.picture~'') }}" alt="Le guitare" title="Image de {{ guitar.name }}" width="150" height="450">
+                    </div>
+                    <div class="list1b">
+                        <p>
+                            <b>{{ guitar.name }}</b><br>
+                            {{ guitar.model.name }}<br>
+                            {{ guitar.category.name }}<br>
+                            {{ guitar.price }} €
+                        </p>
+                    </div>
+                    <div class="list1c">
+                        <a href="{{ path('cart_add', {'id': guitar.id}) }}" class="btn btn-success">
+                            <i class="fas fa-shopping-cart mr-1"></i>
+                            Ajouter
+                        </a>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+{% endblock %}

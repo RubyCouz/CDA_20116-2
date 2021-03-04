@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+{% endblock %}
+{% block title %} Inscription {% endblock %}
+
+{% block body %}
+    <div class="sign1">
+        <div class="sign1a">
+            <a href="{{ path('listall') }}">
+                <img src="{{ asset('img/logo_w.png') }}" alt="Logo RnR Vintage" title="Retour à l'acceuil">
+            </a>
+            <h1>SIGN UP</h1>
+        </div>
+        <div class="sign1b">
+            {{ form_start(form) }}
+            {{ form_widget(form) }}
+            {{ form_end(form) }}
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,38 @@
+{% extends "profil/profil.html.twig" %}
+{% block section2 %}
+    <h2 class="text-center my-5">Mes Infos</h2>
+    <form action="#" method="post">
+        <div class="form-group col-6 mx-auto">
+            <div class="my-4">
+                <input class="form-control form-control-lg" type="text" placeholder="Nom" disabled>
+            </div>
+            <div class="my-4">
+                <input class="form-control form-control-lg" type="text" placeholder="Prénom" disabled>
+            </div>
+            <div class="my-4">
+                <input class="form-control form-control-lg" type="text" placeholder="Mot de passe" disabled>
+            </div>
+            <div class="my-4">
+                <input class="form-control form-control-lg" type="text" placeholder="Email" disabled>
+            </div>
+            <div class="my-4">
+                <input class="form-control form-control-lg" type="text" placeholder="Daite de naissance" disabled>
+            </div>
+            <div class="my-4">
+                <input class="form-control form-control-lg" type="text" placeholder="Adresse" disabled>
+            </div>
+            <div class="my-4">
+                <input class="form-control form-control-lg" type="text" placeholder="Ville" disabled>
+            </div>
+            <div class="my-4">
+                <input class="form-control form-control-lg" type="text" placeholder="Code Postal" disabled>
+            </div>
+            <div class="my-4">
+                <input class="form-control form-control-lg" type="text" placeholder="Pays" disabled>
+            </div>
+        </div>
+        <div class="col-4 mx-auto">
+            <a class="btn btn-primary w-100 h-100" href="{{ path('update') }}">Modifier</a>
+        </div>
+    </form>
+{% endblock %}

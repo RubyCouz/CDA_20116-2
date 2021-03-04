@@ -1,0 +1,21 @@
+{% extends "base_profil.html.twig" %}
+    {% block body %}
+<body class="container-fluid d-flex">
+<section class="col-3 my-5">
+    <a href="{{ path('home') }}" id="navImg"><img src="{{ asset('img/logo_b.png') }}" alt="logo_RnR" title="Acceuil" width="100" height="100"></a>
+    <a href="{{ path('home') }}" id="prof"><h1>RnR Vintage</h1></a>
+    {% block section %}
+        {{ include('left_part/board.html.twig') }}
+    {% endblock %}
+</section>
+<section class="col-9 my-5">
+    {% block section1 %}{% endblock %}
+    {% block section2 %}{% endblock %}
+    {% block section3 %}{% endblock %}
+    {% block section4 %}{% endblock %}
+    {% block section5 %}{% endblock %}
+    {% block section6 %}{% endblock %}
+    {% block update1 %}{% endblock %}
+</section>
+</body>
+{% endblock %}

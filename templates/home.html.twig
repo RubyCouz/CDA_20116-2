@@ -1,0 +1,58 @@
+{% extends 'base.html.twig' %}
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('css/home_style.css') }}">
+{% endblock %}
+
+{% block title %}
+	Rock'n Roll Vintage
+{% endblock %}
+
+{% block body %}
+
+
+
+
+	<div class="row ">
+		<div class="mx-auto w-75">
+            <br><br>
+			<img src="{{ asset('img/acceuil.png') }}" width="100%" alt="acceuil"/>
+		</div>
+	</div>
+
+	<br><br>
+	 <div class="row justify-content-between ">
+	    <div class="col-lg-4">
+            <div class="card border-success mb-3" style="max-width: 20rem;">
+                <div class="card-body text-center">
+                    <img  src="{{ asset('img/deroulant1.png') }}" style="width:280px; height:280px" class="img-fluid align-items-center">
+                    <button type="button" class="btn btn-primary">EN SAVOIR PLUS</button>
+                    <hr>
+                    <p class="card-text">Apprenez quelque chose de nouveau</p>
+                </div>
+            </div>
+        </div>  
+
+        <div class="col-lg-4">
+            <div class="card border-success mb-3" style="max-width: 20rem;">
+                <div class="card-body text-center">
+                    <img src="{{ asset('img/deroulant2.png') }}" style="width:280px; height:280px" class="img-fluid align-items-center">
+                    <button type="button" class="btn btn-primary">EN SAVOIR PLUS</button>
+                    <hr>
+                    <p class="card-text">Trouvez votre son</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-4">
+            <div class="card border-success mb-3" style="max-width: 20rem;">
+                <div class="card-body text-center">
+                    <img src="{{ asset('img/deroulant3.png') }}" style="width:280px; height:280px" class="img-fluid align-items-center">
+                    <button type="button" class="btn btn-primary">EN SAVOIR PLUS</button>
+                    <hr>
+                    <p class="card-text">Entrez dans la légende</p>
+                </div>
+            </div>
+		</div>
+	</div>
+
+{% endblock %}
