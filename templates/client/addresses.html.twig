@@ -1,0 +1,16 @@
+{% extends 'base_profil.html.twig' %}
+{% block body %}
+    <section class="col-9 my-2">
+        <h2 class="text-center my-5">Mon Adresse</h2>
+        <div class="col-12 text-center foundation my-4">
+            <h3 class="my-4"></h3>
+            <ul class="list-group col-md-12 foundation_sm">
+                <li class="list-group-item"><span>{{ client.email }}</span></li>
+                <li class="list-group-item"><span>{{ client.address }}</span></li>
+                <li class="list-group-item"><span>{{ client.city }}</span></li>
+                <li class="list-group-item"><span>{{ client.cp }}</span></li>
+                <li class="list-group-item"><span>{{ client.country }}</span></li>
+            </ul>
+        </div>
+    </section>
+{% endblock %}

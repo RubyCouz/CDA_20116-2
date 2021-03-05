@@ -1,0 +1,82 @@
+{% extends 'base_profil.html.twig' %}
+{% block body %}
+    <section class="col-9 my-2">
+        <h2 class="text-center my-5">Mes Paiements</h2>
+        <div class="panel-group">
+            <div class="panel my-4">
+                <div class="panel-heading">
+                    <a class="btn btn-dark w-100 h-100" data-toggle="collapse" href="#collapse1" role="button"
+                       aria-expanded="false" aria-controls="collapseExample">
+                        <h3 class="text-center">Paiement #1</h3>
+                    </a>
+                </div>
+                <div class="panel-body">
+                    <div id="collapse1" class="collapse">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-12 my-4">
+                                    <address>
+                                        <strong>Adresse:</strong>
+                                        <span>{{ client.address }}</span>
+                                    </address>
+                                    <address>
+                                        <strong>Description:</strong>
+                                        <span>{{ paiement.infosPaiement }}</span>
+                                    </address>
+                                    <address>
+                                        <strong>Méthode de Paiement:</strong>
+                                        <span>{{ paiement.methodPaiement }}</span>
+                                    </address>
+                                    <address>
+                                        <strong>Email:</strong>
+                                        <span>{{ client.email }}</span>
+                                    </address>
+                                    <address>
+                                        <strong>Date de Commande:</strong>
+                                        <span>{{ commande.dateCommande ? commande.dateCommande|date('d/m/Y') : '' }}</span>
+                                    </address>
+                                </div>
+                            </div>
+                            <table class="table table-hover">
+                                <thead>
+                                <tr>
+                                    <th>Produit</th>
+                                    <th>#</th>
+                                    <th class="text-center">Prix</th>
+                                    <th class="text-center">Total</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td class="col-md-9"><em>Guitare</em></td>
+                                    <td class="col-md-1 text-center">1</td>
+                                    <td class="col-md-1 text-center">8€</td>
+                                    <td class="col-md-1 text-center">8€</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-9"><em>Guitare</em></td>
+                                    <td class="col-md-1 text-center">1</td>
+                                    <td class="col-md-1 text-center">8€</td>
+                                    <td class="col-md-1 text-center">8€</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-9"><em>Guitare</em></td>
+                                    <td class="col-md-1 text-center">1</td>
+                                    <td class="col-md-1 text-center">8€</td>
+                                    <td class="col-md-1 text-center">8€</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-9"></td>
+                                    <td class="col-md-1"></td>
+                                    <td class="col-md-1 text-center"><strong>TOTAL</strong></td>
+                                    <td class="col-md-1 text-center"><strong>24€</strong></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
