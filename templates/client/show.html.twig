@@ -1,0 +1,46 @@
+{% extends 'base_profil.html.twig' %}
+
+{% block title %}Client{% endblock %}
+
+{% block body %}
+    <section class="col-9 my-2">
+        <h2 class="text-center my-5">Mes Infos</h2>
+        <div class="form-group col-6 mx-auto">
+            <div class="my-4">
+                <input class="form-control form-control-lg" type="text" placeholder="{{ client.name }}" disabled>
+            </div>
+            <div class="my-4">
+                <input class="form-control form-control-lg" type="text" placeholder="{{ client.surname }}" disabled>
+            </div>
+            <div class="my-4">
+                <input class="form-control form-control-lg" type="password" placeholder="{{ client.password }}"
+                       disabled>
+            </div>
+            <div class="my-4">
+                <input class="form-control form-control-lg" type="email" placeholder="{{ client.email }}" disabled>
+            </div>
+            <div class="my-4">
+                <input class="form-control form-control-lg" type="text"
+                       placeholder="{{ client.birthday ? client.birthday|date('Y-m-d') : '' }}" disabled>
+            </div>
+            <div class="my-4">
+                <input class="form-control form-control-lg" type="text" placeholder="{{ client.address }}" disabled>
+            </div>
+            <div class="my-4">
+                <input class="form-control form-control-lg" type="text" placeholder="{{ client.city }}" disabled>
+            </div>
+            <div class="my-4">
+                <input class="form-control form-control-lg" type="text" placeholder="{{ client.cp }}" disabled>
+            </div>
+            <div class="my-4">
+                <input class="form-control form-control-lg" type="text" placeholder="{{ client.country }}" disabled>
+            </div>
+        </div>
+        <div class="col-2 mx-auto my-4">
+            <a class="btn btn-primary w-100 h-100" href="{{ path('client_edit', {'id': client.id}) }}">Modifier</a>
+        </div>
+        <div class="col-1 my-4">
+            <a class="btn btn-primary w-100 h-100" href="{{ path('client_index') }}">Retour</a>
+        </div>
+    </section>
+{% endblock %}

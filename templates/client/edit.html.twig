@@ -1,0 +1,12 @@
+{% extends 'base_profil.html.twig' %}
+{% block title %}Edition de Profil{% endblock %}
+
+{% block body %}
+    <section class="col-9 my-2">
+        <h2 class="text-center my-5">Modifier mon Profil</h2>
+            {{ include('client/_form.html.twig', {'button_label': 'Mettre à jour'}) }}
+        <div class="col-1 my-4">
+            <a class="btn btn-primary w-100 h-100" href="{{ path('client_index') }}">Retour</a>
+        </div>
+    </section>
+{% endblock %}
