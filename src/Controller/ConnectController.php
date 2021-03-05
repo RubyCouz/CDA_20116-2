@@ -28,10 +28,8 @@ class ConnectController extends AbstractController
             $object = $form->getData(); // On récupère l'object associé
             $em->persist($object); // on le persiste
             $em->flush(); // on save
-
             return $this->redirectToRoute('listall');
         }
-
         return $this->render('connect\sign_up.html.twig', ['form' => $form->createView()]);  // on envoie ensuite le formulaire au template
     }
 

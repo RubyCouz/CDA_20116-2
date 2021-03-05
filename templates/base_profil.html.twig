@@ -4,81 +4,129 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>{% block title %}Welcome!{% endblock %}</title>
-    {# Run `composer require symfony/webpack-encore-bundle`
-           and uncomment the following Encore helpers to start using Symfony UX #}
-
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+          integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+          crossorigin="anonymous">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+          integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+          crossorigin="anonymous"/>
     {% block stylesheets %}
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-                                     integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
-                                     crossorigin="anonymous">
-        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
-              integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
-              crossorigin="anonymous"/>
         <link rel="stylesheet" href="{{ asset('css/app.css') }}">
-        {#{{ encore_entry_link_tags('app') }}#}
     {% endblock %}
-
-
 </head>
-
-{% block body %}
-
-{% endblock %}
-<footer>
-    {% block javascripts %}
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
-                integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
-                crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
-                integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
-                crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"
-                integrity="sha384-LtrjvnR4Twt/qOuYxE721u19sVFLVSA4hf/rRt6PrZTmiPltdZcI7q7PXQBYTKyf"
-                crossorigin="anonymous"></script>
-        <script src="{{ asset('js/app.js') }}"></script>
-    {% endblock %}
-    <div class="footer-container">
-        <div class="logo_footer">
-            <img src="{{ asset('img/logo_w.png') }}" alt="logo_blanc" width="80" height="">
+<body>
+<div class="container-fluid">
+    <h1> RnR Vintage</h1>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+        <a href="{{ path('home') }}" id="navImg"><img src="{{ asset('img/logo_w.png') }}" alt="logo_RnR" title="Acceuil"
+                                                      width="70" height="50"></a>
+        <a class="navbar-brand" href="{{ path('home') }}">Accueil</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item"><a class="nav-link " href="{{ path('listall') }}">Tout nos Produits</a></li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true"
+                       aria-expanded="false" role="button">Catégories</a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="{{ path('listelec') }}">Électriques</a>
+                        <a class="dropdown-item" href="{{ path('listacous') }}">Acoustiques</a>
+                        <a class="dropdown-item" href="{{ path('listbass') }}">Basses</a>
+                    </div>
+                </li>
+                <li class="nav-item"><a class="nav-link " href="{{ path('client_index') }}">Mon Compte</a></li>
+            </ul>
+            <form class="form-inline">
+                <input class="form-control mr-sm-2" type="search" placeholder="Sratocaster, Noventa, ..."
+                       aria-label="Search">
+                <button class="btn btn-outline-info my-2 my-sm-0" type="submit">Search</button>
+            </form>
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a class="nav-link " href="{{ path('cart_index') }}">Panier</a></li>
+                <li class="nav-item"><a class="nav-link " href="{{ path('connect') }}"> Se connecter</a></li>
+            </ul>
         </div>
-        <div class="global-footer__nav">
-            <div class="content-asset">
-                <div class="row">
-                    <ul class="global-footer__list col-sm-12 col-md">
+    </nav>
+    <section class="container-fluid d-flex">
+        <section class="col-3 my-5">
+            <div class="border border-muted">
+                <div class="d-flex flex-column">
+                    <p class="h4 text-muted font-weight-bold m-2">Mes Informations Personnelles</p>
+                    <a class="text-decoration-none text-secondary m-2 mx-4" href="{{ path('client_show', {'id': client.id}) }}">Mes
+                        Infos</a>
+                </div>
+                <div class="d-flex flex-column">
+                    <p class="h4 text-muted font-weight-bold m-2">Mes Commandes</p>
+                    <a class="text-decoration-none text-secondary m-2 mx-4" href="{{ path('client_shop', {'id': 1}) }}">Mes
+                        Commandes</a>
+                    <a class="text-decoration-none text-secondary m-2 mx-4" href="{{ path('client_addresses', {'id': 1}) }}">Mes
+                        Adresses</a>
+                </div>
+                <div class="d-flex flex-column">
+                    <p class="h4 text-muted font-weight-bold m-2">Mes Paiements</p>
 
-                        <li><a href="{{ path('listelec') }}">Guitares Electriques</a></li>
-                        <li><a href="{{ path('listacous') }}">Guitares Acoustiques</a></li>
-                        <li><a href="{{ path('listbass') }}">Basses Electriques</a></li>
-                    </ul>
-                    <ul class="global-footer__list col">
-                        <h6 class="uppercase no-margin-bottom">Plus sur nous</h6>
-                        <li><a href="">A Propos De Rock N'Roll Vintage</a></li>
-                        <li><a href="">Nous Contacter</a></li>
-                    </ul>
-
-                    <ul class="global-footer__list col">
-                        <h6 class="uppercase no-margin-bottom">COMPTE</h6>
-                        <li><a href="">Mon compte</a></li>
-                        <li><a href="">Statut de ma commande</a></li>
-                    </ul>
-
-                    <ul class="global-footer__list col">
-                        <h6 class="uppercase no-margin-bottom">Nos Réseaux</h6>
-
-                        <li><img src="{{ asset('img/facebook.png') }}" height="30px">Facebook</li>
-
-                        <li><img src="{{ asset('img/twitter.png') }}" height="30px">Twitter</li>
-
-                        <li><img src="{{ asset('img/insta.png') }}" height="30px">Instagram</li>
-
-                        <li><img src="{{ asset('img/snap.png') }}" height="30px">Snapchat</li>
-                    </ul>
-
+                    <a class="text-decoration-none text-secondary m-2 mx-4" href="{{ path('client_payments', {'id': 1}) }}">Mes
+                        Paiements</a>
                 </div>
             </div>
-        </div>
+        </section>
+        {% block body %}{% endblock %}
+    </section>
+</div>
 
+<footer class="footer-container">
+    <div class="logo_footer">
+        <img src="{{ asset('img/logo_w.png') }}" alt="logo_blanc" width="80" height="">
+    </div>
+    <div class="global-footer__nav">
+        <div class="content-asset">
+            <div class="row m-0 p-0">
+                <ul class="global-footer__list col-sm-12 col-md">
+
+                    <li><a href="{{ path('listelec') }}">Guitares Electriques</a></li>
+                    <li><a href="{{ path('listacous') }}">Guitares Acoustiques</a></li>
+                    <li><a href="{{ path('listbass') }}">Basses Electriques</a></li>
+                </ul>
+                <ul class="global-footer__list col">
+                    <h6 class="uppercase no-margin-bottom">Plus sur nous</h6>
+                    <li><a href="">A Propos De Rock N'Roll Vintage</a></li>
+                    <li><a href="">Nous Contacter</a></li>
+                </ul>
+
+                <ul class="global-footer__list col">
+                    <h6 class="uppercase no-margin-bottom">COMPTE</h6>
+                    <li><a href="{{ path('client_index') }}">Mon compte</a></li>
+                </ul>
+
+                <ul class="global-footer__list col">
+                    <h6 class="uppercase no-margin-bottom">Nos Réseaux</h6>
+
+                    <li><img src="{{ asset('img/facebook.png') }}" height="30px">Facebook</li>
+
+                    <li><img src="{{ asset('img/twitter.png') }}" height="30px">Twitter</li>
+
+                    <li><img src="{{ asset('img/insta.png') }}" height="30px">Instagram</li>
+
+                    <li><img src="{{ asset('img/snap.png') }}" height="30px">Snapchat</li>
+                </ul>
+            </div>
+        </div>
+    </div>
 </footer>
 </body>
-
+{% block javascripts %}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+            integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+            integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"
+            integrity="sha384-LtrjvnR4Twt/qOuYxE721u19sVFLVSA4hf/rRt6PrZTmiPltdZcI7q7PXQBYTKyf"
+            crossorigin="anonymous"></script>
+    <script src="{{ asset('js/app.js') }}"></script>
+{% endblock %}
 </html>

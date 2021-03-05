@@ -8,6 +8,13 @@ use Symfony\Component\Routing\Annotation\Route;
 class ListController extends AbstractController
 {
     /**
+     * @Route("/", name="nav")
+     */
+    public function nav() {
+        return $this->render('nav.html.twig');
+    }
+
+    /**
      * @Route("/home", name="home")
      */
     public function home() {
